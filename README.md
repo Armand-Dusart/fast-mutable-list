@@ -32,7 +32,7 @@ Located in `src/app/ui/components/FastList`
 This example demonstrates key React optimization concepts:
 
 - State management patterns
-- Memoization
-- Efficient list updates
+- Custom state management strategy
+- Efficient list updates.
 
 **But the first rendering is still painful.**
