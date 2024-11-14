@@ -1,9 +1,9 @@
 "use client";
 import { useCallback, useState } from "react";
 
-export function SlowList({ initList }: { initList: ItemType[] }) {
+export function SlowList({ initList }: { initList: Readonly<ItemType[]> }) {
   // we initialize the list with 10_000 items
-  const [list, setList] = useState<ItemType[]>(initList);
+  const [list, setList] = useState<ItemType[]>(initList as ItemType[]);
 
   const handleChange = useCallback((index: number, value: string) => {
     setList((prev) => {
@@ -37,7 +37,7 @@ export function SlowList({ initList }: { initList: ItemType[] }) {
 }
 
 interface Props {
-  item: ItemType;
+  item: Readonly<ItemType>;
   onChange: (value: string) => void;
 }
 

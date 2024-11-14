@@ -23,7 +23,7 @@ function useItem(
   return item;
 }
 
-export function FastList({ initList }: { initList: ItemType[] }) {
+export function FastList({ initList }: { initList: readonly ItemType[] }) {
   const list = useMemo(() => {
     return initList.map((item) => new Observable<ItemType>(item));
   }, [initList]);
@@ -49,8 +49,8 @@ export function FastList({ initList }: { initList: ItemType[] }) {
 }
 
 interface FProps {
-  itemId: number;
-  list: Observable<ItemType>[];
+  itemId: Readonly<number>;
+  list: Readonly<Observable<ItemType>[]>;
 }
 
 function ItemFast({ itemId, list }: FProps) {
